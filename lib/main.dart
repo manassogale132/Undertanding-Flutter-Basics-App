@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'list_view_details.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -62,7 +63,6 @@ class LoginPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Login App',
-          style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.amber,
       ),
@@ -274,7 +274,6 @@ class SignUpPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Login App',
-          style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.amber,
       ),
@@ -422,7 +421,6 @@ class ListViewPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'ListView (Practice)',
-          style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.amber,
       ),
@@ -438,13 +436,25 @@ class ListViewPage extends StatelessWidget {
               ),
               onTap: () {},
               subtitle: Text('Testing listview'),
-              leading: Icon(
-                Icons.circle,
-                color: Colors.grey,
+              leading: IconButton(
+                icon: new Icon(
+                  Icons.circle,
+                  color: Colors.amber,
+                ),
+                onPressed: () {
+                },
               ),
-              trailing: Icon(
-                Icons.arrow_forward_ios_sharp,
-                color: Colors.amber,
+              trailing: IconButton(
+                icon: new Icon(
+                  Icons.arrow_forward_ios_sharp,
+                  color: Colors.amber,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DetailsPage(index)),
+                  );
+                },
               ),
             ),
           );
